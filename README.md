@@ -1,70 +1,24 @@
-# Getting Started with Create React App
+## Title: **Marvel Fantasy Battle**
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+**Description:**
+    Marvel Fantasy Battle will be an exciting web application that allows you to create your dream team and see how they fare against another worthy team.
 
-## Available Scripts
+**Technologies Used:**
+    React.js and TailwindCSS for styling.
 
-In the project directory, you can run:
 
-### `npm start`
+***Building the Team***
+    In this application you and your opponent will select your characters from a list, alternating turns. Each selectable character from the list will have a set amount of draft points which they are worth according to their power, and both you and your opponent will have a set amount of draft points which you must not exceed. For example, you may start off with 15 draft points to spend. Some characters will be worth 2 points while others may range up to 5. You may wonder why not just select 3 strong characters who are worth 5 points each. While it would be within the rules to do so, some characters can amplify the powers of members of their team and/or buff the powers of the characters on the opposing team. Keeping this in mind, finding a team that compliments each other may be more beneficial than just strong individual characters.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+***How the game is played***
+    The goal of the game is for you to acquire more points than your opponent within an agreed upon set of rounds. To begin, once all members of your team have been selected, the scoring algorithm will give your team an effective team battle score(ETBS) based on different factors. Note that this takes into account any amps or buffs received from other team members or battle location. Please see the "what determines your ETBS" section for details. The ETBS score will determine a number of dice you will be granted to use for gameplay. The algorithm will also do the same for your opponent so that you both have the appropriate number of dice based on your respective team's ETBS. You will then virtually roll the dice, by the click of a button, against your opponent to determine who wins that round. The winner will acquire a point. The game will then advance to the second round and randomly change the location. Because of the location change, even though the teams remain the same, your ETBS may change because of any new amps of buffs received from the environment. You repeat the round procedure of rolling and the new round winner will gain a point. You will play as many rounds as was agreed upon, continuing to acquire points. In the end you will tally all the points to determine which team comes out victorious.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+***Scoring***
+    The game is played by rolling dice, and you win rounds by scoring higher on a roll than your opponent. This means that the more dice you have, the higher your chances are of winning each round to acquire a point. While individual character scores are important, it is your ETBS that will ultimately determine the number of dice you have.
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+***What determines your effective team battle score(ETBS)?***
+    At this current state of developement there are three layers. The first layer to your ETBS will be to get a character's individual battle score (IBS). There will be many factors to determine a character's IBS including strength, speed, close range combat, leadership, flight, projectile ability, etc. Each factor will be weighted differently for priority in battle. The second layer will take the character's IBS and depending on who's on their team and who's on the opponent's team, will recalculate their IBS. For example, if Wolverine's IBS is 800, his score may drop to 200 or lower if Magneto or another metal manipulator is on the opposite team. Note that certain characters have leadership experience and so their very presence on the team could amplify everyone's IBS. An example of these characters may include Professor X, Magneto, Cyclops, Captain America, Reed Richards, etc. The third layer to your ETBS evaluates your current round's battle location. Some characters may do better in certain environments than others. For example, a team that has storm will have a massive advantage in an area surrounded by water or anywhere where she can manipulate the weather. Brawler's and those with stats high in close-range-combat like Wolverine or Black Widow will naturally do better in smaller enclosed areas than those with projectile ability. The amount of advantage or disadvantage will depend on the location. These three layers will combine to give your team its ETBS.
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+***Why use dice?***
+    The Dice are important for two reasons. One, because the game wouldn't be as fun if all you did was just pick the team and let the algorithm give you a score. Anyone can compare two numbers and note which one is higher. The second reason is because even in a real battle there are variables and unforeseen circumstances that allows a slightly weaker team to overcome a stronger team (within reason). Having dice represents those variables. A stronger team does have a better chance of winning and so they have more dice than a weaker team. However, seven dice can still roll as low as 7(7x1) while two dice can roll as high as 12(2x6). No matter how small, there's always a chance!
