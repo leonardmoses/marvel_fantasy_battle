@@ -3,14 +3,11 @@ import { powergrid } from '../data/powergrid';
 const GameBoard = () => {
   return (
     <div>
-      {powergrid.map((x) => (
-        <ul key={x.id}>
-          <li>Name: {x.name}</li>
-          <li>id: {x.id}</li>
-          <li>Draft Value: {x.draft_value}</li>
-          <li>Mele: {x.mele_effectiveness}</li>
-        </ul>
-      ))}
+        <h1 className='text-3xl font-bold underline'>Game Board</h1>
+        <div>
+            <label>Choose Character</label>
+            <input type='text'/>
+        </div>
     </div>
   );
 };

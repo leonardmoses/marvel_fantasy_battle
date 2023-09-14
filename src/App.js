@@ -4,6 +4,8 @@ import GameBoard from "./pages/GameBoard";
 import Instructions from "./pages/Instructions";
 import Layout from "./components/ui/Layout";
 
+import './styles/App.css'
+
 function App() {
   return (
     <Routes>
