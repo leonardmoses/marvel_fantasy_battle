@@ -14,7 +14,7 @@ const Splash = () => {
             Fantasy Battle
           </h2>
           <Link to="/gameboard">
-            <h3 className="text-white text-center text-2xl  ">Enter</h3>
+            <h3 className="text-white text-center text-2xl hover:text-MarvelRed active:text-Secondary animate-pulse hover:animate-grow ">Enter</h3>
           </Link>
         </div>
       </div>
