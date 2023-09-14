@@ -1,20 +1,27 @@
-import { powergrid } from './data/powergrid';
+import { Routes , Route} from "react-router-dom";
+import Splash from './pages/Splash';
+import GameBoard from "./pages/GameBoard";
+import Instructions from "./pages/Instructions";
+import Layout from "./components/ui/Layout";
 
 function App() {
-  console.log(powergrid)
   return (
-    <div className="App">
-      <h1>Marvel Fantasy Battle</h1>
-      <div>{powergrid.map((x) => (
-        <ul key={x.id}>
-          <li>Name: {x.name}</li>
-          <li>id: {x.id}</li>
-          <li>Draft Value: {x.draft_value}</li>
-          <li>Mele: {x.mele_effectiveness}</li>
-        </ul>
+    <Routes>
+      <Route
+        path='/'
+        element=<Splash/>
+      />
+      
+      <Route
+        path='/gameboard'
+        element=<Layout><GameBoard/></Layout>
         
-      ))}</div>
-    </div>
+      />
+      <Route
+        path='/instructions'
+        element=<Layout><Instructions/></Layout>
+      />
+    </Routes>
   );
 }
 
