@@ -1,4 +1,12 @@
-const TeamASelect = ({powergrid , addNameToTeamA , newName , setNewName}) => {
+const TeamASelect = ({ powergrid, setTeam1 , newName, setNewName }) => {
+
+  function addNameToTeamA(e) {
+    e.preventDefault();
+    setTeam1((currentName) => {
+      return [...currentName, { name: newName }];
+    });
+  }
+
   return (
     <div>
       <form
@@ -14,7 +22,7 @@ const TeamASelect = ({powergrid , addNameToTeamA , newName , setNewName}) => {
             value={newName}
             placeholder={"Default"}
             onChange={(e) => setNewName(e.target.value)}
-            className="w-11/12 place-self-center text-center my-3 rounded-md bg-ThemeWhite"
+            className="w-11/12 place-self-center text-center my-3 p-0.5 rounded-md bg-ThemeWhite"
           >
             {powergrid.map((character) => {
               return (

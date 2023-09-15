@@ -7,18 +7,6 @@ const GameBoard = () => {
   const [newName, setNewName] = useState("");
   const [team1, setTeam1] = useState([]);
 
-  function addNameToTeamA(e) {
-    e.preventDefault();
-    setTeam1((currentName) => {
-      return [...currentName, { name: newName }];
-    });
-  }
-
-  function deleteName(name) {
-    setTeam1((currentTeam) => {
-      return currentTeam.filter((x) => x.name !== name);
-    });
-  }
 
   function checkCurrentTeam1() {
     console.log(team1);
@@ -30,12 +18,12 @@ const GameBoard = () => {
       <div className="rounded-lg w-1/2">
         <TeamASelect
           powergrid={powergrid}
-          addNameToTeamA={addNameToTeamA}
+          setTeam1={setTeam1}
           newName={newName}
           setNewName={setNewName}
         />
 
-        <TeamARoster team1={team1} deleteName={deleteName} />
+        <TeamARoster team1={team1} setTeam1={setTeam1} />
 
         <button
           onClick={checkCurrentTeam1}

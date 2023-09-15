@@ -1,4 +1,11 @@
-const TeamARoster = ({team1 , deleteName}) => {
+const TeamARoster = ({team1 , setTeam1}) => {
+
+    function deleteName(name) {
+        setTeam1((currentTeam) => {
+          return currentTeam.filter((x) => x.name !== name);
+        });
+      }
+
   return (
     <div className="text-ThemeWhite bg-Secondary p-5 mt-2 rounded-lg">
       <h3 className="mb-3 text-xl text-center border-b border-solid border-white pb-2">
