@@ -2,7 +2,7 @@ import { powergrid } from "../data/powergrid";
 
 const GameBoard = () => {
   return (
-    <div className="m-5 bg-gradient-to-b from-Secondary to-white rounded-lg p-5">
+    <div className="m-5 bg-ThemeWhite border-solid border-2 border-white rounded-lg p-5">
       <h2 className="text-5xl font-bold">Game Board</h2>
       <div className="bg-white rounded-lg w-1/2 ">
         <form className="mt-5 flex flex-col py-5 border-solid border border-purple-300 rounded-lg">
@@ -19,7 +19,7 @@ const GameBoard = () => {
     invalid:border-pink-500 invalid:text-pink-600
     focus:invalid:border-pink-500 focus:invalid:ring-pink-500 w-11/12 place-self-center"
           />
-          <button className="bg-Secondary text-MarvelRed rounded-md mt-2 py-1 px-2 w-11/12 place-self-center">
+          <button className="bg-Secondary text-ThemeWhite2 rounded-md mt-2 py-1 px-2 w-11/12 place-self-center hover:bg-ThemeB1">
             Add Character
           </button>
         </form>

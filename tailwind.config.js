@@ -10,6 +10,18 @@ module.exports = {
         MarvelBlack: "#202020",
         ThemeWhite: "#D7D9D7",
         ThemeWhite2: "#FFFFFA",
+        
+        ThemeA1: "#D11664",
+        ThemeA2: "#A03988",
+        ThemeA3: "#644C8E",
+        ThemeA4: "#354F7A",
+        ThemeA5: "#2F4858",
+
+        ThemeB1: "#ED0058",
+        ThemeB2: "#E40985",
+        ThemeB3: "#CB37AE",
+        ThemeB4: "#A155CF",
+        ThemeB5: "#5F6BE4",
       },
       animation: {
         "grow": "grow 0.5s ease-in-out infinite",

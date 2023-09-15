@@ -5,7 +5,7 @@ const Splash = () => {
     <div className="bg-black h-screen flex justify-center items-center">
       <div className="max-w-fit">
         <div className="flex justify-center">
-          <h1 className="bg-MarvelRed text-white text-8xl text-center max-w-fit">
+          <h1 className="bg-MarvelRed text-white font-bold tracking-tighter px-3 py-0 text-8xl text-center max-w-fit">
             MARVEL
           </h1>
         </div>

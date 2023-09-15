@@ -6,7 +6,7 @@ const MainNav = () => {
       <div className="w-screen my-5">
         <div className="flex justify-center ">
           <Link to="/">
-            <h1 className="bg-MarvelRed text-white text-6xl text-center max-w-fit">
+            <h1 className="bg-MarvelRed text-white font-bold tracking-tighter text-6xl text-center max-w-fit px-2">
               MARVEL
             </h1>
           </Link>
