@@ -1,4 +1,3 @@
-import { useState } from "react";
 
 const TeamASelect = ({ powergrid, teamAName, setTeamAName, newName, setNewName , teamA , setTeamA }) => {
 
@@ -11,13 +10,10 @@ const TeamASelect = ({ powergrid, teamAName, setTeamAName, newName, setNewName ,
 
   function onOptionChange(e) {
     setNewName(e.target.value);
-    // console.log(e.target.value);
   }
 
-  function setTeamAStats(e) {
-    // e.preventDefault();
+  function setTeamAStats() {
     const stats = []
-    // const removeDuplicates = [...new Set(teamAStats)]
     //loops through active roster
     for (let i = 0; i < teamAName.length; i++) {
       //loops through powergrid database for every member of active roster

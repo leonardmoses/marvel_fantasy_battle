@@ -2,11 +2,13 @@ import { useState } from "react";
 import { powergrid } from "../data/powergrid";
 import TeamASelect from "../components/TeamASelect";
 import TeamARoster from "../components/TeamARoster";
+import TeamAEvaluation from "../components/TeamAEvaluation";
 
 const GameBoard = () => {
   const [newName, setNewName] = useState("");
   const [teamAName, setTeamAName] = useState([]);
   const [teamA, setTeamA] = useState([])
+  const [teamALeader , setTeamALeader] = useState('')
 
 
   return (
@@ -24,6 +26,8 @@ const GameBoard = () => {
         />
 
         <TeamARoster teamAName={teamAName} setTeamAName={setTeamAName} />
+
+        <TeamAEvaluation teamA={teamA} teamALeader={teamALeader} setTeamALeader={setTeamALeader}/>
 
         <button
           onClick={e => console.log(teamA)}
