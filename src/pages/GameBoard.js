@@ -5,12 +5,9 @@ import TeamARoster from "../components/TeamARoster";
 
 const GameBoard = () => {
   const [newName, setNewName] = useState("");
-  const [team1, setTeam1] = useState([]);
+  const [teamAName, setTeamAName] = useState([]);
+  const [teamA, setTeamA] = useState([])
 
-
-  function checkCurrentTeam1() {
-    console.log(team1);
-  }
 
   return (
     <div className="m-5 bg-ThemeWhite border-solid border-2 border-white rounded-lg p-5">
@@ -18,18 +15,21 @@ const GameBoard = () => {
       <div className="rounded-lg w-1/2">
         <TeamASelect
           powergrid={powergrid}
-          setTeam1={setTeam1}
+          teamAName={teamAName}
+          setTeamAName={setTeamAName}
           newName={newName}
           setNewName={setNewName}
+          teamA={teamA}
+          setTeamA={setTeamA}
         />
 
-        <TeamARoster team1={team1} setTeam1={setTeam1} />
+        <TeamARoster teamAName={teamAName} setTeamAName={setTeamAName} />
 
         <button
-          onClick={checkCurrentTeam1}
+          onClick={e => console.log(teamA)}
           className="bg-slate-100 rounded-md mt-5 p-1"
         >
-          Console Log Team1
+          Console Log TeamAName
         </button>
       </div>
     </div>

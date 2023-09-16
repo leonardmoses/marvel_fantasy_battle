@@ -1,7 +1,7 @@
-const TeamARoster = ({team1 , setTeam1}) => {
+const TeamARoster = ({teamAName , setTeamAName}) => {
 
     function deleteName(name) {
-        setTeam1((currentTeam) => {
+        setTeamAName((currentTeam) => {
           return currentTeam.filter((x) => x.name !== name);
         });
       }
@@ -12,7 +12,7 @@ const TeamARoster = ({team1 , setTeam1}) => {
         Active Roster
       </h3>
       <ul>
-        {team1.map((x, idx) => {
+        {teamAName.map((x, idx) => {
           return (
             <li key={idx} className="mb-2">
               <button
