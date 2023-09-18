@@ -3,6 +3,7 @@ import { powergrid } from "../data/powergrid";
 import TeamASelect from "../components/TeamASelect";
 import TeamARoster from "../components/TeamARoster";
 import TeamAEvaluation from "../components/TeamAEvaluation";
+import ClassRoom from "../components/stages/ClassRoom";
 
 const GameBoard = () => {
   const [newName, setNewName] = useState("");
@@ -28,7 +29,7 @@ const GameBoard = () => {
         <TeamARoster teamAName={teamAName} setTeamAName={setTeamAName} />
 
         <TeamAEvaluation teamA={teamA} teamALeader={teamALeader} setTeamALeader={setTeamALeader}/>
-
+        <ClassRoom teamA={teamA}/>
         <button
           onClick={e => console.log(teamA)}
           className="bg-slate-100 rounded-md mt-5 p-1"
