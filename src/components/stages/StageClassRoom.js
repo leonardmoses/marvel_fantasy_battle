@@ -1,6 +1,11 @@
+import { useEffect } from "react"
 
 const StageClassRoom = ({teamA}) => {
     console.log(teamA)
+
+    //Start of UseEffect
+    //This useEffect has an emtpy array. Will only run the code once. But once for everytime the component renders. (Everytime the component is selected in the dropbdown)
+    useEffect(() => {
 
     // How the stage modifies the individual stats. All values should add up to 1.0
     const stageModifier = {
@@ -13,7 +18,7 @@ const StageClassRoom = ({teamA}) => {
     // Create a copy of all the team stats for the stage
     const teamAStage = []
     // Creates an actual copy instead of reference in memory
-    teamA?.forEach(teamAMember => {
+    teamA.forEach(teamAMember => {
         let copy = Object.assign({} , teamAMember)
         teamAStage.push(copy)
     });
@@ -27,11 +32,19 @@ const StageClassRoom = ({teamA}) => {
 
     });
 
-    // console.log(teamAStage)
+    console.log(teamAStage)
 
+    //End of the use Effect.
+    }, [])
     return ( 
         <>
             <h1>ClassRoom Rendered</h1>
+            <button
+
+            className="bg-slate-100 rounded-md mt-5 p-1"
+          >
+            Apply Stage Stats
+          </button>
         </>
      );
 }

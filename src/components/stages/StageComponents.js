@@ -26,7 +26,6 @@ const StageComponents = ({ teamA }) => {
         console.log("we are in class room");
         break;
       case "Beach":
-        stage= e.target.innerText
         setStageDefaultVisible(false);
         setStageClassRoomVisible(false);
         setStageDesertVisible(false);
@@ -64,7 +63,7 @@ const StageComponents = ({ teamA }) => {
         </select>
       </div>
       {stageDefaultVisible ? <StageDefault /> : null}
-      {stageClassRoomVisible ? <StageClassRoom /> : null}
+      {stageClassRoomVisible ? <StageClassRoom teamA={teamA}/> : null}
       {stageBeachVisible ? <StageBeach /> : null}
       {stageDesertVisible ? <StageDesert /> : null}
     </>
