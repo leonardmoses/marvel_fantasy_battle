@@ -26,6 +26,7 @@ const StageComponents = ({ teamA }) => {
         console.log("we are in class room");
         break;
       case "Beach":
+        stage= e.target.innerText
         setStageDefaultVisible(false);
         setStageClassRoomVisible(false);
         setStageDesertVisible(false);
@@ -50,12 +51,12 @@ const StageComponents = ({ teamA }) => {
 
   return (
     <>
-      <div>
-        <h1>Hello</h1>
+      <div className="text-xl">
+        <h1>Select the Stage</h1>
       </div>
 
-      <div>
-        <select value={stage} onChange={stageSelectHandler}>
+      <div className="">
+        <select value={stage.innerText} onChange={stageSelectHandler} className="w-1/3 text-center">
           <option value="select stage">---</option>
           <option value="Class Room">Class Room</option>
           <option value="Beach">Beach</option>
