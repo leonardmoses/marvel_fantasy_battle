@@ -19,26 +19,32 @@ const StageComponents = ({ teamA }) => {
 
     switch (stage) {
       case "Class Room":
-        setStageClassRoomVisible(true);
         setStageDefaultVisible(false);
         setStageBeachVisible(false);
+        setStageDesertVisible(false);
+        setStageClassRoomVisible(true);
         console.log("we are in class room");
         break;
       case "Beach":
-        setStageBeachVisible(true);
         setStageDefaultVisible(false);
         setStageClassRoomVisible(false);
+        setStageDesertVisible(false);
+        setStageBeachVisible(true);
         console.log("we are in beach");
         break;
-    case "Desert":
-        setStageDesertVisible(true)
-        setStageDefaultVisible(false)
-        setStageClassRoomVisible(false)
-        setStageBeachVisible(false)
+      case "Desert":
+        setStageDefaultVisible(false);
+        setStageClassRoomVisible(false);
+        setStageBeachVisible(false);
+        setStageDesertVisible(true);
         console.log("we are in desert");
         break;
       default:
         console.log("we are in default");
+        setStageClassRoomVisible(false);
+        setStageBeachVisible(false);
+        setStageDesertVisible(false);
+        setStageDefaultVisible(true);
     }
   }
 
@@ -60,7 +66,6 @@ const StageComponents = ({ teamA }) => {
       {stageClassRoomVisible ? <StageClassRoom /> : null}
       {stageBeachVisible ? <StageBeach /> : null}
       {stageDesertVisible ? <StageDesert /> : null}
-      
     </>
   );
 };
