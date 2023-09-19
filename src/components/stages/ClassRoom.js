@@ -30,12 +30,10 @@ const ClassRoom = ({teamA}) => {
 
     console.log(teamAStage)
 
-   
-
     return ( 
         <>
+            <h1>ClassRoom</h1>
         </>
-        
      );
 }
 
