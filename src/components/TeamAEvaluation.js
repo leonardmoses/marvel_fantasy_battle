@@ -13,6 +13,7 @@ const TeamAEvaluation = ({ teamA , teamALeader, setTeamALeader , teamAStageStats
         }
     }
 
+    
   return (
     <div className="bg-white text-sm w-full mt-5 rounded-lg border border-purple-300 border-solid p-5">
         <h3 className="text-sm">Team Leader: {teamALeader}</h3>
