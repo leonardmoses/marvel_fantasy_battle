@@ -74,7 +74,10 @@ const StageComponents = ({ teamA, teamAStageStats, setTeamAStageStats }) => {
           setTeamAStageStats={setTeamAStageStats}
         />
       ) : null}
-      {stageBeachVisible ? <StageBeach /> : null}
+      {stageBeachVisible ? <StageBeach 
+        teamA={teamA}
+        teamAStageStats={teamAStageStats}
+        setTeamAStageStats={setTeamAStageStats}/> : null}
       {stageDesertVisible ? <StageDesert /> : null}
     </>
   );

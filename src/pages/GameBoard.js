@@ -12,9 +12,6 @@ const GameBoard = () => {
   const [teamAStageStats, setTeamAStageStats] = useState(teamA);
   const [teamALeader, setTeamALeader] = useState("");
 
-  console.log(teamA)
-  console.log(teamAStageStats)
-
   return (
     <div className="m-5 bg-ThemeWhite border-solid border-2 border-white rounded-lg p-5">
       <div className="text-center">
