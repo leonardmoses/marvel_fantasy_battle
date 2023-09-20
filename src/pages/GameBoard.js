@@ -9,17 +9,25 @@ const GameBoard = () => {
   const [newName, setNewName] = useState("");
   const [teamAName, setTeamAName] = useState([]);
   const [teamA, setTeamA] = useState([]);
+  const [teamAStageStats, setTeamAStageStats] = useState(teamA);
   const [teamALeader, setTeamALeader] = useState("");
+
+  console.log(teamA)
+  console.log(teamAStageStats)
 
   return (
     <div className="m-5 bg-ThemeWhite border-solid border-2 border-white rounded-lg p-5">
       <div className="text-center">
         <h2 className="text-5xl font-bold text-white">Game Board</h2>
-        <StageComponents teamA={teamA}/>
+        <StageComponents
+          teamA={teamA}
+          teamAStageStats={teamAStageStats}
+          setTeamAStageStats={setTeamAStageStats}
+        />
       </div>
 
       <div className="">
-        <div className="rounded-lg w-1/2">
+        <div className="rounded-lg lg:w-1/2 md:w-full">
           <TeamASelect
             powergrid={powergrid}
             teamAName={teamAName}
@@ -36,6 +44,7 @@ const GameBoard = () => {
             teamA={teamA}
             teamALeader={teamALeader}
             setTeamALeader={setTeamALeader}
+            teamAStageStats={teamAStageStats}
           />
 
           <button

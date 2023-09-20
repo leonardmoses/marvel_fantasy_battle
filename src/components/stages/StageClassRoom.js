@@ -1,7 +1,7 @@
 import { useEffect } from "react"
 
-const StageClassRoom = ({teamA}) => {
-    console.log(teamA)
+const StageClassRoom = ({teamA , teamAStageStats, setTeamAStageStats}) => {
+    // console.log(teamA)
 
     //Start of UseEffect
     //This useEffect has an emtpy array. Will only run the code once. But once for everytime the component renders. (Everytime the component is selected in the dropbdown)
@@ -31,8 +31,8 @@ const StageClassRoom = ({teamA}) => {
         teamAMember.flight_speed = teamAMember.flight_speed * stageModifier.flight_speed
 
     });
-
-    console.log(teamAStage)
+    // console.log(teamAStage)
+    setTeamAStageStats(teamAStage)
 
     //End of the use Effect.
     }, [])
