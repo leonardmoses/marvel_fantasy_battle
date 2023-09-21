@@ -9,12 +9,18 @@ const TeamASelect = ({ powergrid, teamAName, setTeamAName, newName, setNewName ,
   }
 
   function onOptionChange(e) {
-    setNewName(e.target.value);
-  }
+    // setNewName(e.target.value);
+    const teamMemberName = e.target.value;
+    //goes through array and filters out everything else that doesn't pass the test. RETURNS AN ARRAY!
+    const teamMember = powergrid.filter((character, index) => character.name === teamMemberName)
 
-  function setTeamAStats() {
+    //Takes an array destructures an array
+    setTeamA([...teamA, teamMember[0]])
+
+    /*
     const stats = []
     //loops through active roster
+    
     for (let i = 0; i < teamAName.length; i++) {
       //loops through powergrid database for every member of active roster
       for (let j = 0; j < powergrid.length; j++) {
@@ -24,13 +30,18 @@ const TeamASelect = ({ powergrid, teamAName, setTeamAName, newName, setNewName ,
         }
       }
     }
-    setTeamA(stats)
+    */
+
+      // setTeamA(stats)
+    }
+
+  function setTeamAStats() {
+
   }
 
   return (
     <>
       <form
-        onSubmit={addNameToTeamA}
         className="mt-5 flex flex-col py-5 border-solid border border-purple-300 rounded-lg bg-white"
       >
         <label htmlFor="character">

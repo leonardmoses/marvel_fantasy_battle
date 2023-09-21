@@ -13,15 +13,17 @@ const TeamAEvaluation = ({ teamA , teamALeader, setTeamALeader , teamAStageStats
         }
     }
 
-    
+
 
   return (
     <div className="bg-white text-sm w-full mt-5 rounded-lg border border-purple-300 border-solid p-5">
         <h3 className="text-sm">Team Leader: {teamALeader}</h3>
         <h3 className="mt-3">Raw Stats</h3>
+
       <table className="text-center w-full">
         <thead>
             <tr className="font-medium border border-solid border-black">
+            <td></td>
                 <th className="border border-solid border-black px-10">Name</th>
                 <th className="border border-solid border-black px-5 ">Mele</th>
                 <th className="border border-solid border-black px-5">Projectile</th>
@@ -30,16 +32,17 @@ const TeamAEvaluation = ({ teamA , teamALeader, setTeamALeader , teamAStageStats
             </tr>
         {teamA.map((x) => (
             <tr key={x.id} className="font-light border border-solid border-black">
+                <td><button>x</button></td>
                 <th className="mr-0 border border-solid border-black">{x.name}</th>
                 <td className="border border-solid border-black">{x.mele_effectiveness}</td>
                 <td className="border border-solid border-black">{x.projectile_effectiveness}</td>
                 <td className="border border-solid border-black">{x.durability}</td>
                 <td className="border border-solid border-black">{x.flight_speed}</td>
             </tr>
-        ))}
+        ))}  
         </thead>
       </table>
- 
+   
       {teamAStageStats.length > 0 ? 
     <div>
         <h3 className="mt-3">Stats Affected by Stage</h3>
@@ -64,7 +67,7 @@ const TeamAEvaluation = ({ teamA , teamALeader, setTeamALeader , teamAStageStats
         </thead>
       </table>
     </div>
-      : console.log('No stage selected. Did not render stage affected stats')}
+      : console.log()}
       <button
       onClick={leaderSelected}
       className="bg-slate-100 rounded-md mt-5 p-1"

@@ -8,10 +8,18 @@ import StageComponents from "../components/stages/StageComponents";
 const GameBoard = () => {
   const [newName, setNewName] = useState("");
   const [teamAName, setTeamAName] = useState([]);
+  
   const [teamA, setTeamA] = useState([]);
+
   const [teamAStageStats, setTeamAStageStats] = useState(teamA);
   const [teamALeader, setTeamALeader] = useState("");
 
+  console.log(teamA)
+
+  function removeTeamMember() {
+
+  }
+  
   return (
     <div className="m-5 bg-ThemeWhite border-solid border-2 border-white rounded-lg p-5">
       <div className="text-center">
@@ -42,6 +50,7 @@ const GameBoard = () => {
             teamALeader={teamALeader}
             setTeamALeader={setTeamALeader}
             teamAStageStats={teamAStageStats}
+            removeTeamMember={removeTeamMember}
           />
 
           <button

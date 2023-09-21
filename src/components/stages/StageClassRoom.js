@@ -25,11 +25,10 @@ const StageClassRoom = ({teamA , teamAStageStats, setTeamAStageStats}) => {
 
     // Executing the Stage modifications
     teamAStage.forEach(teamAMember => {
-        teamAMember.mele_effectiveness = (teamAMember.mele_effectiveness * stageModifier.mele_effectiveness).toFixed(1)
-        teamAMember.projectile_effectiveness = (teamAMember.projectile_effectiveness * stageModifier.projectile_effectiveness).toFixed(1)
-        teamAMember.durability = (teamAMember.durability * stageModifier.durability).toFixed(1)
-        teamAMember.flight_speed = (teamAMember.flight_speed * stageModifier.flight_speed).toFixed(1)
-
+        teamAMember.mele_effectiveness = parseFloat(teamAMember.mele_effectiveness * stageModifier.mele_effectiveness).toFixed(1)
+        teamAMember.projectile_effectiveness = parseFloat(teamAMember.projectile_effectiveness * stageModifier.projectile_effectiveness).toFixed(1)
+        teamAMember.durability = parseFloat(teamAMember.durability * stageModifier.durability).toFixed(1)
+        teamAMember.flight_speed = parseFloat(teamAMember.flight_speed * stageModifier.flight_speed).toFixed(1)
     });
     // console.log(teamAStage)
     setTeamAStageStats(teamAStage)
