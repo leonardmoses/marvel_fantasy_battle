@@ -14,7 +14,6 @@ const TeamAEvaluation = ({ teamA , setTeamA , teamALeader, setTeamALeader , team
     }
 
     function removeFromTeam(e) {
-      console.log(e)
       setTeamA((intendedChar) => {
         return intendedChar.filter((x) => x.name !== e.name)
       }) 
@@ -31,56 +30,67 @@ const TeamAEvaluation = ({ teamA , setTeamA , teamALeader, setTeamALeader , team
       </button>
 
       <h3 className="text-sm">Team Leader: {teamALeader}</h3>
-      <h3 className="mt-3">Raw Stats</h3>
+      
 
-      <table className="text-center w-full">
-        <thead>
-            <tr className="font-medium">
-                <td></td>
-                <th className="border border-solid border-black px-10">Name</th>
-                <th className="border border-solid border-black px-5 ">Mele</th>
-                <th className="border border-solid border-black px-5">Projectile</th>
-                <th className="border border-solid border-black px-5">Durability</th>
-                <th className="border border-solid border-black px-5">Flight</th>
+      <div className="bg-Secondary px-3 py-3 rounded-lg text-white">
+        <h3 className="text-center text-xl">Team A Roster</h3>
+        <h4 className="text-center text-md">Character Raw Stats</h4>
+
+        <table className="text-center w-full flex justify-center items-center mt-3">
+          <thead className="">
+            <tr className="font-medium ">
+              <td></td>
+              <th className="border-white border-b border-solid text-left w-screen">Name</th>
+              <th className="border-white border-b border-solid w-screen ">Mele</th>
+              <th className="border-white border-b border-solid w-screen">Projectile</th>
+              <th className="border-white border-b border-solid w-screen">Durability</th>
+              <th className="border-white border-b border-solid w-screen">Flight</th>
             </tr>
-        {teamA.map((x) => (
-            <tr key={x.id} className="font-light">
-                <td><button onClick={() => removeFromTeam(x)} className="bg-purple-800 rounded-xl font-xl py-0.5 px-2 text-white">x</button></td>
-                <th className="mr-0 border border-solid border-black">{x.name}</th>
-                <td className="border border-solid border-black">{x.mele_effectiveness}</td>
-                <td className="border border-solid border-black">{x.projectile_effectiveness}</td>
-                <td className="border border-solid border-black">{x.durability}</td>
-                <td className="border border-solid border-black">{x.flight_speed}</td>
+          {teamA.map((x ,idx) => (
+            <tr key={idx} className="font-light ">
+              <td className="py-1"><button onClick={() => removeFromTeam(x)} className="bg-ThemeWhite rounded-md font-xl py-0 px-1.5 mr-3 text-MarvelBlack hover:bg-MarvelRed hover:text-ThemeWhite hover:animate-grow">x</button></td>
+              <th className="mr-0 text-left border-b border-solid border-white">{x.name}</th>
+              <td className="border-b border-solid border-white">{x.mele_effectiveness}</td>
+              <td className="border-b border-solid border-white">{x.projectile_effectiveness}</td>
+              <td className="border-b border-solid border-white">{x.durability}</td>
+              <td className="border-b border-solid border-white">{x.flight_speed}</td>
             </tr>
-        ))}  
-        </thead>
-      </table>
-   
-        {teamAStageStats.length > 0 ? 
-      <div>
-          <h3 className="mt-3">Stats Affected by Stage</h3>
-        <table className="text-center w-full">
-          <thead>
-            <tr className="font-medium border border-solid border-black">
-              <th className="border border-solid border-black px-10">Name</th>
-              <th className="border border-solid border-black px-5 ">Mele</th>
-              <th className="border border-solid border-black px-5">Projectile</th>
-              <th className="border border-solid border-black px-5">Durability</th>
-              <th className="border border-solid border-black px-5">Flight</th>
-            </tr>
-          {teamAStageStats.map((x) => (
-            <tr key={x.id} className="font-light border border-solid border-black">
-              <th className="mr-0 border border-solid border-black">{x.name}</th>
-              <td className="border border-solid border-black">{x.mele_effectiveness}</td>
-              <td className="border border-solid border-black">{x.projectile_effectiveness}</td>
-              <td className="border border-solid border-black">{x.durability}</td>
-              <td className="border border-solid border-black">{x.flight_speed}</td>
-            </tr>
-          ))}
+          ))}  
           </thead>
         </table>
+
       </div>
-        : console.log()}
+
+      {teamAStageStats.length > 0 ? 
+
+        <div className="bg-ThemeWhite border-Secondary border border-solid px-3 py-3 mt-5 rounded-lg text-Secondary">
+        <h3 className="text-center">Stats Affected by Modifiers</h3>
+
+        <table className="text-center w-full flex justify-center items-center mt-3">
+          <thead className="">
+            <tr className="font-medium ">
+              <td></td>
+              <th className="border-Secondary border-b border-solid text-left w-screen">Name</th>
+              <th className="border-Secondary border-b border-solid w-screen ">Mele</th>
+              <th className="border-Secondary border-b border-solid w-screen">Projectile</th>
+              <th className="border-Secondary border-b border-solid w-screen">Durability</th>
+              <th className="border-Secondary border-b border-solid w-screen">Flight</th>
+            </tr>
+          {teamAStageStats.map((x, idx) => (
+            <tr key={idx} className="font-light ">
+              <td className="py-1"></td>
+              <th className="mr-0 text-left border-b border-solid border-white">{x.name}</th>
+              <td className="border-b border-solid border-white">{x.mele_effectiveness}</td>
+              <td className="border-b border-solid border-white">{x.projectile_effectiveness}</td>
+              <td className="border-b border-solid border-white">{x.durability}</td>
+              <td className="border-b border-solid border-white">{x.flight_speed}</td>
+            </tr>
+          ))}  
+          </thead>
+        </table>
+
+      </div>
+      : console.log()}
 
     </div>
   );

@@ -8,7 +8,7 @@ const GameBoard = () => {
   const [teamAStageStats, setTeamAStageStats] = useState(teamA);
   const [teamALeader, setTeamALeader] = useState("");
 
-  console.log(teamA);
+  // console.log(teamA);
 
   function removeTeamMember() {}
 
