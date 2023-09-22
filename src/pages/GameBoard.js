@@ -5,12 +5,13 @@ import StageComponents from "../components/stages/StageComponents";
 
 const GameBoard = () => {
   const [teamA, setTeamA] = useState([]);
-  const [teamAStageStats, setTeamAStageStats] = useState(teamA);
   const [teamALeader, setTeamALeader] = useState("");
+  const [teamAStageStats, setTeamAStageStats] = useState([]);
 
-  // console.log(teamA);
 
-  function removeTeamMember() {}
+  function characterOptionSelection(character) {
+    console.log(character)
+  }
 
   return (
     <div className="m-5 bg-ThemeWhite border-solid border-2 border-white rounded-lg p-5">
@@ -20,6 +21,7 @@ const GameBoard = () => {
           teamA={teamA}
           teamAStageStats={teamAStageStats}
           setTeamAStageStats={setTeamAStageStats}
+          characterOptionSelection={characterOptionSelection}
         />
       </div>
 
@@ -32,7 +34,7 @@ const GameBoard = () => {
           setTeamALeader={setTeamALeader}
           teamAStageStats={teamAStageStats}
           setTeamAStageStats={setTeamAStageStats}
-          removeTeamMember={removeTeamMember}
+          characterOptionSelection={characterOptionSelection}
         />
       </div>
     </div>

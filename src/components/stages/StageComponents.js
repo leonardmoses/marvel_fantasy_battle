@@ -4,7 +4,12 @@ import StageDefault from "./StageDefault";
 import StageClassRoom from "./StageClassRoom";
 import StageDesert from "./StageDesert";
 
-const StageComponents = ({ teamA, teamAStageStats, setTeamAStageStats }) => {
+const StageComponents = ({
+  teamA,
+  teamAStageStats,
+  setTeamAStageStats,
+  characterOptionSelection,
+}) => {
   //   const [stage, setStage] = useState("no stage selected");
   let stage = "default";
   const [stageDefaultVisible, setStageDefaultVisible] = useState(true);
@@ -58,8 +63,7 @@ const StageComponents = ({ teamA, teamAStageStats, setTeamAStageStats }) => {
         <select
           value={stage.innerText}
           onChange={stageSelectHandler}
-          className="w-1/3 text-center"
-        >
+          className="w-1/3 place-self-center text-center my-3 p-0.5 rounded-md bg-white">
           <option value="select stage">---</option>
           <option value="Class Room">Class Room</option>
           <option value="Beach">Beach</option>
@@ -72,12 +76,16 @@ const StageComponents = ({ teamA, teamAStageStats, setTeamAStageStats }) => {
           teamA={teamA}
           teamAStageStats={teamAStageStats}
           setTeamAStageStats={setTeamAStageStats}
+          characterOptionSelection={characterOptionSelection}
         />
       ) : null}
-      {stageBeachVisible ? <StageBeach 
-        teamA={teamA}
-        teamAStageStats={teamAStageStats}
-        setTeamAStageStats={setTeamAStageStats}/> : null}
+      {stageBeachVisible ? (
+        <StageBeach
+          teamA={teamA}
+          teamAStageStats={teamAStageStats}
+          setTeamAStageStats={setTeamAStageStats}
+        />
+      ) : null}
       {stageDesertVisible ? <StageDesert /> : null}
     </>
   );

@@ -17,7 +17,6 @@ const TeamAEvaluation = ({ teamA , setTeamA , teamALeader, setTeamALeader , team
       setTeamA((intendedChar) => {
         return intendedChar.filter((x) => x.name !== e.name)
       }) 
-      
     }
 
   return (

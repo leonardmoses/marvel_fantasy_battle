@@ -1,11 +1,14 @@
 import { useEffect } from "react"
 
-const StageClassRoom = ({teamA , teamAStageStats, setTeamAStageStats}) => {
-    // console.log(teamA)
+const StageClassRoom = ({teamA , teamAStageStats, setTeamAStageStats , characterOptionSelection }) => {
+    console.log(teamA)
+    console.log(teamAStageStats)
+
 
     //Start of UseEffect
     //This useEffect has an emtpy array. Will only run the code once. But once for everytime the component renders. (Everytime the component is selected in the dropbdown)
     useEffect(() => {
+
 
     // How the stage modifies the individual stats. All values should add up to 1.0
     const stageModifier = {

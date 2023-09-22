@@ -1,5 +1,6 @@
+import { useEffect } from "react";
 import TeamAEvaluation from "./TeamAEvaluation";
-const TeamA = ({ powergrid, teamAStageStats, setTeamAStageStats, teamALeader, setTeamALeader , teamA , setTeamA , removeTeamMember }) => {
+const TeamA = ({ powergrid, teamAStageStats, setTeamAStageStats, teamALeader, setTeamALeader , teamA , setTeamA , characterOptionSelection }) => {
 
 
   function onOptionChange(e) {
@@ -11,7 +12,9 @@ const TeamA = ({ powergrid, teamAStageStats, setTeamAStageStats, teamALeader, se
     )[0];
     //Takes an array and destructures the array.
     setTeamA([...teamA, teamMember]);
+    characterOptionSelection(teamMember)
   }
+
 
 
   return (
@@ -44,7 +47,6 @@ const TeamA = ({ powergrid, teamAStageStats, setTeamAStageStats, teamALeader, se
         teamALeader={teamALeader}
         setTeamALeader={setTeamALeader}
         teamAStageStats={teamAStageStats}
-        removeTeamMember={removeTeamMember}
       />
     </div>
   );
