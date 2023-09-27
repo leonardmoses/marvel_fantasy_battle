@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { powergrid } from "../data/powergrid";
 import TeamA from "../components/TeamA";
-import StageComponents from "../components/stages/StageComponents";
+import Modifiers from "../components/modifiers/Modifiers";
 
 const GameBoard = () => {
   const [teamA, setTeamA] = useState([]);
@@ -17,7 +17,7 @@ const GameBoard = () => {
     <div className="m-5 bg-ThemeWhite border-solid border-2 border-white rounded-lg p-5">
       <div className="text-center">
         <h2 className="text-5xl font-bold text-white">Game Board</h2>
-        <StageComponents
+        <Modifiers
           teamA={teamA}
           teamAStageStats={teamAStageStats}
           setTeamAStageStats={setTeamAStageStats}
