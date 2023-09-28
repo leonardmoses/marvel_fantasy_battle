@@ -1,4 +1,24 @@
-const TeamAMod = ( {teamAStageStats} ) => {
+const TeamAMod = ( {teamAStageStats , teamA , teamAScore , setTeamAScore } ) => {
+
+
+    function setScore() {
+        console.log(teamAStageStats)
+        console.log(teamAScore)
+        let score = []
+
+        teamAStageStats.forEach(char => {
+            let charScore =
+            char.mele_effectiveness + 
+            char.projectile_effectiveness + 
+            char.durability +
+            char.flight_speed;
+            score.push(charScore)
+        });
+        // console.log(score)
+        setTeamAScore(score.reduce((a,b) => a+b))
+        
+    }
+
     return ( 
         <div>
             <div className="bg-ThemeWhite border-Secondary border border-solid px-3 py-3 mt-5 rounded-lg text-Secondary">
@@ -28,6 +48,12 @@ const TeamAMod = ( {teamAStageStats} ) => {
             </table>
 
             </div>
+
+            <button
+                onClick={setScore}
+                className="bg-slate-100 rounded-md mt-5 p-1">
+                Set Team A Score
+          </button>
         </div>
      );
 }
