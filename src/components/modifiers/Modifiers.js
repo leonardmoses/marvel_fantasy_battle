@@ -1,4 +1,5 @@
 import StageComponents from "./stages/StageComponents";
+import TeamAMod from "./team-modifiers/TeamAMod";
 
 const Modifiers = ({ teamA , teamAStageStats , setTeamAStageStats , characterOptionSelection }) => {
     return ( 

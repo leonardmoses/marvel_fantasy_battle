@@ -1,7 +1,7 @@
-import { useEffect } from "react";
 import TeamAEvaluation from "./TeamAEvaluation";
-const TeamA = ({ powergrid, teamAStageStats, setTeamAStageStats, teamALeader, setTeamALeader , teamA , setTeamA , characterOptionSelection }) => {
+import TeamALeader from "./modifiers/team-modifiers/TeamALeader";
 
+const TeamA = ({ powergrid, teamAStageStats, setTeamAStageStats, teamALeader, setTeamALeader , teamA , setTeamA , characterOptionSelection }) => {
 
   function onOptionChange(e) {
     // setNewName(e.target.value);
@@ -14,12 +14,13 @@ const TeamA = ({ powergrid, teamAStageStats, setTeamAStageStats, teamALeader, se
     setTeamA([...teamA, teamMember]);
     characterOptionSelection(teamMember)
   }
-
-
+  
 
   return (
-    <div className="border-purple-300 rounded-lg bg-white py-5 border-solid border">
-      <form className="mt-5 flex flex-col ">
+    <div className="border-purple-300 rounded-lg bg-white py-5 border-solid border p-5">
+      
+      
+      <form className="flex flex-col ">
         <label htmlFor="character">
           <h4 className="text-2xl text-center text-Secondary">Team A</h4>
         </label>
@@ -29,7 +30,7 @@ const TeamA = ({ powergrid, teamAStageStats, setTeamAStageStats, teamALeader, se
             id="character"
             // value={newName}
             onChange={onOptionChange}
-            className="w-11/12 place-self-center text-center my-3 p-0.5 rounded-md bg-ThemeWhite">
+            className="w-full place-self-center text-center my-3 p-0.5 rounded-md bg-ThemeWhite">
             {powergrid.map((character) => {
               return (
                 <option key={character.id} value={character.name}>
@@ -40,6 +41,10 @@ const TeamA = ({ powergrid, teamAStageStats, setTeamAStageStats, teamALeader, se
           </select>
         </div>
       </form>
+
+      <TeamALeader teamA={teamA} setTeamALeader={setTeamALeader}/>
+      
+      <h3 className="text-sm">Team Leader: {teamALeader}</h3>
 
       <TeamAEvaluation
         teamA={teamA}
