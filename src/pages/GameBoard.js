@@ -7,7 +7,9 @@ const GameBoard = () => {
   const [teamA, setTeamA] = useState([]);
   const [teamALeader, setTeamALeader] = useState("");
   const [teamAStageStats, setTeamAStageStats] = useState([]);
-  const [teamAScore, setTeamAScore] = useState(0)
+  // const [teamAScore, setTeamAScore] = useState(0)
+
+  let teamAScore = 0
 
 
   function characterOptionSelection(character) {
@@ -32,7 +34,7 @@ const GameBoard = () => {
           teamA={teamA}
           setTeamA={setTeamA}
           teamAScore={teamAScore}
-          setTeamAScore={setTeamAScore}
+          // setTeamAScore={setTeamAScore}
           teamALeader={teamALeader}
           setTeamALeader={setTeamALeader}
           teamAStageStats={teamAStageStats}
