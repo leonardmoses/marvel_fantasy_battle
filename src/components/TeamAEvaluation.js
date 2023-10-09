@@ -1,6 +1,6 @@
 import TeamAMod from "./modifiers/team-modifiers/TeamAMod";
 
-const TeamAEvaluation = ({ teamA , setTeamA , teamALeader, setTeamALeader , teamAStageStats }) => {
+const TeamAEvaluation = ({ teamA , setTeamA , teamAScore , setTeamAScore , teamALeader, setTeamALeader , teamAStageStats }) => {
 
   function removeFromTeam(e) {
     setTeamA((intendedChar) => {
@@ -40,7 +40,14 @@ const TeamAEvaluation = ({ teamA , setTeamA , teamALeader, setTeamALeader , team
 
       </div>
 
-      {teamAStageStats.length > 0 ? <TeamAMod teamAStageStats={teamAStageStats} /> : console.log()}
+      {teamAStageStats.length > 0 ? 
+        <TeamAMod 
+        teamA={teamA}
+        teamAScore={teamAScore}
+        setTeamAScore={setTeamAScore}
+        teamAStageStats={teamAStageStats} 
+        /> 
+      : console.log()}
 
     </div>
   );

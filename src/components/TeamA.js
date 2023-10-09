@@ -1,7 +1,7 @@
 import TeamAEvaluation from "./TeamAEvaluation";
 import TeamALeader from "./modifiers/team-modifiers/TeamALeader";
 
-const TeamA = ({ powergrid, teamAStageStats, setTeamAStageStats, teamALeader, setTeamALeader , teamA , setTeamA , characterOptionSelection }) => {
+const TeamA = ({ powergrid, teamAStageStats, setTeamAStageStats, teamALeader, setTeamALeader , teamA , setTeamA , characterOptionSelection , teamAScore , setTeamAScore }) => {
 
   function onOptionChange(e) {
     // setNewName(e.target.value);
@@ -14,7 +14,7 @@ const TeamA = ({ powergrid, teamAStageStats, setTeamAStageStats, teamALeader, se
     setTeamA([...teamA, teamMember]);
     characterOptionSelection(teamMember)
   }
-  
+
 
   return (
     <div className="border-purple-300 rounded-lg bg-white py-5 border-solid border p-5">
@@ -49,6 +49,8 @@ const TeamA = ({ powergrid, teamAStageStats, setTeamAStageStats, teamALeader, se
       <TeamAEvaluation
         teamA={teamA}
         setTeamA={setTeamA}
+        teamAScore={teamAScore}
+        setTeamAScore={setTeamAScore}
         teamALeader={teamALeader}
         setTeamALeader={setTeamALeader}
         teamAStageStats={teamAStageStats}
