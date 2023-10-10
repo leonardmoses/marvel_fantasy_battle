@@ -1,3 +1,5 @@
+import { useEffect } from "react";
+
 const TeamAMod = ( {teamAStageStats , teamA , teamAScore , setTeamAScore } ) => {
 
 
@@ -15,9 +17,12 @@ const TeamAMod = ( {teamAStageStats , teamA , teamAScore , setTeamAScore } ) => 
             score.push(charScore)
         });
         // console.log(score)
-        // setTeamAScore(score.reduce((a,b) => a+b))
-        teamAScore = (score.reduce((a,b) => a+b))
+        setTeamAScore(score.reduce((a,b) => a+b))
     }
+
+    useEffect(() => {
+        setScore()
+    }, [teamAScore])
 
     return ( 
         <div>
